@@ -1,7 +1,7 @@
 function init(){
-    const btn = document.getElementById('default-btn');
-movePill(btn);
-btn.classList.add('active');
+    const saved = localStorage.getItem('activeTab') || 'home';
+    const btn = document.querySelector(`.nav-btn[onclick*="${saved}"]`);
+    if (btn) tab(saved, btn);
 }
 
 function tab(id, el){
@@ -13,6 +13,8 @@ document.querySelectorAll('.page-wrap').forEach(p=>p.classList.remove('active'))
 document.getElementById(id+'-tab').classList.add('active');
 
 window.scrollTo({top:0,behavior:'smooth'});
+
+localStorage.setItem('activeTab', id);
 }
 
 function movePill(el){
