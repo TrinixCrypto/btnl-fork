@@ -6,6 +6,30 @@
     --ease:cubic-bezier(0.2,0.8,0.2,1);
 }
 
+/* Animated gradient background */
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(
+            120deg,
+            #050505,
+            #0b0b0b,
+            #120f08,
+            #050505
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 22s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
 body {
     background:var(--bg);
     color:#d4d4d4;
