@@ -110,6 +110,7 @@ body {
     border-radius:100px;
 }
 
+
 .nav-btn.active { color:var(--accent); }
 .nav-btn:hover:not(.active) { color:#aaa; }
 
@@ -237,6 +238,22 @@ body {
     border-radius: 50%;
     background: #22c55e;
 }
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.status-dot.online {
+    background: #22c55e;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.status-dot.offline { background: #ef4444; }
+.status-dot.maintenance { background: #facc15; }
+
+
 
 /* ===== TEAM CARD ENHANCEMENTS ===== */
 .team-card::after {
